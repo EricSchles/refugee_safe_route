@@ -1,0 +1,4 @@
+*.creds
+*.pyc
+*.py~
+*.swp
