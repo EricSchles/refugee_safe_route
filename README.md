@@ -13,6 +13,8 @@ createuser -P -s -e -d hackathon_user
 #password is 1234
 createdb refugee_safe_route -U hackathon_user
 #making sure the user and database 
+
+map_app : username$ python init_db.py
 ```
 
 

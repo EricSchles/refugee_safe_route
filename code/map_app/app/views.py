@@ -29,3 +29,4 @@ def map_visual():
     #locations = get_locations()
     #locations = [to_geojson(location) for location in locations]
     return render_template("map_visual.html",locations=json.dumps(locations))
+
