@@ -1,3 +1,5 @@
+[![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg?maxAge=2592000)](https://gitter.im/EricSchles/refugee_safe_route)
+
 # refugee_safe_route
 
 The goal of this project is to make google maps for refuggees where red means unsafe and green means safe.  Rather than being a reference to 
