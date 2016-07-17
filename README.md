@@ -2,3 +2,18 @@
 
 The goal of this project is to make google maps for refuggees where red means unsafe and green means safe.  Rather than being a reference to 
 speed of travel, it is a reference to safety of travel.
+
+
+##Creating our database
+
+For this project we will be creating a postgres database!  How to set up postgres:
+
+```
+createuser -P -s -e -d hackathon_user
+#password is 1234
+createdb refugee_safe_route -U hackathon_user
+#making sure the user and database 
+```
+
+
+
