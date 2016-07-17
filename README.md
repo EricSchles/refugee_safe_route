@@ -15,6 +15,10 @@ createdb refugee_safe_route -U hackathon_user
 #making sure the user and database 
 
 map_app : username$ python init_db.py
+
+map_app : username$ python manage.py db init
+map_app : username$ python manage.py db migrate
+map_app : username$ python manage.py db upgrade
 ```
 
 

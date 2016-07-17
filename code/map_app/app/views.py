@@ -8,7 +8,7 @@ def get_locations():
     """
     This will need to be a list of locations that end up on the map
     """
-    pass
+    return [(way_point.longitude,way_point.latitude) for way_point in WayPoints.query.all()]
     
 @app.route("/",methods=["GET","POST"])
 def index():
@@ -26,7 +26,7 @@ def to_geojson(coordinates):
 
 @app.route("/map_visual",methods=["GET","POST"])
 def map_visual():
-    #locations = get_locations()
-    #locations = [to_geojson(location) for location in locations]
+    locations = get_locations()
+    locations = [to_geojson(location) for location in locations]
     return render_template("map_visual.html",locations=json.dumps(locations))
 
