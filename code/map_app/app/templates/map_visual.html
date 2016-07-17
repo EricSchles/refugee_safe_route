@@ -23,6 +23,12 @@
 	.setView([locations[1]["geometry"]["coordinates"][1],locations[1]["geometry"]["coordinates"][0]],5)
 	.featureLayer.setGeoJSON(locations);
 
+	//http://gis.stackexchange.com/questions/29833/how-to-draw-a-polyline-in-leaflet
+
+	[for (x of locations) ]
+	var polyline = L.polyline(locations, {color: 'red'}).addTo(map);
+	map.fitBounds(polyline.getBounds());
+
 </script>
 
  		</body>
