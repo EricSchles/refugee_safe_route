@@ -25,8 +25,11 @@
 
 	//http://gis.stackexchange.com/questions/29833/how-to-draw-a-polyline-in-leaflet
 
-	[for (x of locations) ]
-	var polyline = L.polyline(locations, {color: 'red'}).addTo(map);
+	var pointList = []
+	for (x of locations) {
+		pointList.push(L.latLng(x["geometry"]["coordinates"][1],x["geometry"]["coordinates"][0]))
+	}
+	var polyline = new L.Polyline(pointList, {color: 'red'}).addTo(map);
 	map.fitBounds(polyline.getBounds());
 
 </script>
