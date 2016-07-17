@@ -1,3 +1,4 @@
+pgmpy
 geopy
 usaddress
 Flask==0.10.1

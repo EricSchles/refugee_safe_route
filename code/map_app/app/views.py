@@ -4,6 +4,13 @@ from flask import render_template,request
 from app.models import *
 import json
 
+def define_pgm_model():
+    """
+    This model will define a pgm that infers how likely a given waypoint is dangerous.
+    We'll make use of proximity to a dangerous node, whether the area is considered war torn.
+    """
+    
+
 def get_locations():
     """
     This will need to be a list of locations that end up on the map
