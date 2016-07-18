@@ -145,8 +145,8 @@ a:focus {
     padding: 100px 0;
     text-align: center;
     color: #fff;
-    background: url(/static/img/intro-bg.jpg) no-repeat bottom center scroll;
-    background-color: #181818;
+    /*background: url(/static/img/router_bg-min.jpg) no-repeat bottom center scroll;*/
+    /*background-color: #181818;*/
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -211,7 +211,7 @@ a:focus {
     padding: 100px 0;
     text-align:center;
     color: #fff;
-    background-color: #505050;
+    /*background-color: #505050;*/
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -286,7 +286,7 @@ a:focus {
     -moz-animation-timing-function: linear;
 }
 
-@-webkit-keyframes pulse {    
+@-webkit-keyframes pulse {
     0 {
         -webkit-transform: scale(1);
         transform: scale(1);
@@ -303,7 +303,7 @@ a:focus {
     }
 }
 
-@-moz-keyframes pulse {    
+@-moz-keyframes pulse {
     0 {
         -moz-transform: scale(1);
         transform: scale(1);
@@ -377,7 +377,8 @@ a:focus {
 
 @media(min-width:767px) {
     .content-section {
-        padding-top: 250px;
+        padding-top: 50px;
+        padding-bottom: 50px;
     }
 
     .about-section {

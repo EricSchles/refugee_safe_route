@@ -33,7 +33,7 @@
     <![endif]-->
     <style type="text/css">
     body {
-      background-image: "{{ url_for('static',filename='img/intro-bg.jpg') }}"
+      /*background-image: "{{ url_for('static',filename='img/router_bg-min.jpg') }}"*/
     }
     .img-wrap, h1 {
         text-align: center;
@@ -88,7 +88,7 @@
     </nav>
 
     <!-- Intro Header -->
-    <header class="intro">
+    <header class="intro" data-parallax="scroll" data-image-src="{{ url_for('static',filename='img/router_bg-min.jpg') }}">
         <div class="intro-body">
             <div class="container">
                 <div class="row">
@@ -112,7 +112,9 @@
                 <h2>Map and Other information</h2>
                 <div class="overall_links">
                 <p>
-                    <a href="http://localhost:5000/map_visual">Geographic View of Safe Route</a>
+                    <a href="http://localhost:5000/map_visual">
+                      <img src="{{ url_for('static', filename='img/map_mockup-min.jpg') }}" width="600px">
+                      <p>Geographic View of Safe Route</p></a>
                 </p>
                 </div>
         </div>
@@ -133,7 +135,7 @@
     </header>
 
     <!-- Contact Section -->
-    <header class="contact">
+    <header class="contact" data-parallax="scroll" data-image-src="{{ url_for('static',filename='img/router_bg-min.jpg') }}">
     <section id="contact" class="container content-section text-center">
         <div class="row">
             <div class="col-md-12">
@@ -167,6 +169,7 @@
 
     <!-- jQuery -->
     <script src="{{url_for('static',filename='js/jquery.js') }}"></script>
+    <script src="{{url_for('static', filename='js/parallax.min.js' ) }}"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="{{url_for('static', filename='js/bootstrap.min.js') }}"></script>
@@ -176,7 +179,7 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="{{ url_for('static', filename='js/grayscale.js')}}"></script>
-    <script src="{{url_for('static', filename='js/navbarcustom.js')}}"></script>
+    <!-- <script src="{{url_for('static', filename='js/navbarcustom.js')}}"></script> -->
 
     <script>
   /* jsonp form to email function */
