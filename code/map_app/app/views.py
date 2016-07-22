@@ -3,6 +3,13 @@ from app import db
 from flask import render_template,request
 from app.models import *
 import json
+import random
+from flask import jsonify
+
+
+def danger(coordinates):
+    # TODO: use pgm
+    return random.random()
 
 def define_pgm_model():
     """
@@ -24,7 +31,9 @@ def index():
 def to_geojson(coordinates):
     dicter = {}
     dicter["type"] = "Feature"
-    dicter["properties"] = {}
+    dicter["properties"] = {
+        "danger": danger(coordinates),
+    }
     dicter["geometry"] = {
         "type":"Point",
         "coordinates":[float(coordinates[0]), float(coordinates[1])]
@@ -37,3 +46,7 @@ def map_visual():
     locations = [to_geojson(location) for location in locations]
     return render_template("map_visual.html",locations=json.dumps(locations))
 
+@app.route("/waypoints", methods=["GET"])
+def waypoints():
+    locations = [to_geojson(location) for location in get_locations()]
+    return jsonify(locations)

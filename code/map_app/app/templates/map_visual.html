@@ -14,25 +14,30 @@
 
 
 <script>
-	//This is leaflet code
+
+document.addEventListener('DOMContentLoaded', function(event) {
+
 	var locations = JSON.parse({{locations|tojson}});
+    
+    //This is leaflet code 
+    L.mapbox.accessToken = 'pk.eyJ1IjoiZXJpY3NjaGxlcyIsImEiOiI5Zjk4MjVkZTZlMjAwM2I3OTY2OTI4MTJmODVkN2Q3MCJ9.1gRox8Gx76YqrBJiCsxLLQ';
 
-	L.mapbox.accessToken = 'pk.eyJ1IjoiZXJpY3NjaGxlcyIsImEiOiI5Zjk4MjVkZTZlMjAwM2I3OTY2OTI4MTJmODVkN2Q3MCJ9.1gRox8Gx76YqrBJiCsxLLQ';
+    var map = L.mapbox.map('map', 'mapbox.streets')
+    .setView([locations[1]["geometry"]["coordinates"][1],locations[1]["geometry"]["coordinates"][0]],5)
+    .featureLayer.setGeoJSON(locations);
 
-	var map = L.mapbox.map('map', 'mapbox.streets')
-	.setView([locations[1]["geometry"]["coordinates"][1],locations[1]["geometry"]["coordinates"][0]],5)
-	.featureLayer.setGeoJSON(locations);
+    //http://gis.stackexchange.com/questions/29833/how-to-draw-a-polyline-in-leaflet
 
-	//http://gis.stackexchange.com/questions/29833/how-to-draw-a-polyline-in-leaflet
+    var pointList = locations.map(function(x) {
+        var coords = x["geometry"]["coordinates"];
+        return L.latLng(coords[1], coords[0]);
+    });
+    var polyline = new L.Polyline(pointList, {color: 'red'}).addTo(map);
+    map._map.fitBounds(polyline.getBounds());
 
-	var pointList = []
-	for (x of locations) {
-		pointList.push(L.latLng(x["geometry"]["coordinates"][1],x["geometry"]["coordinates"][0]))
-	}
-	var polyline = new L.Polyline(pointList, {color: 'red'}).addTo(map);
-	map.fitBounds(polyline.getBounds());
+});
 
 </script>
 
- 		</body>
- 		</html>
+</body>
+</html>
