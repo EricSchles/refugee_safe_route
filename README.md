@@ -1,6 +1,6 @@
 [![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg?maxAge=2592000)](https://gitter.im/EricSchles/refugee_safe_route)
 
-# refugee_safe_route
+# Refugee Safe Route
 
 The goal of this project is to make google maps for refugees where red means unsafe and green means safe.  Rather than being a reference to speed of travel, it is a reference to safety of travel.
 
@@ -21,6 +21,3 @@ map_app : username$ python manage.py db init
 map_app : username$ python manage.py db migrate
 map_app : username$ python manage.py db upgrade
 ```
-
-
-
